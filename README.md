@@ -3,9 +3,34 @@
 Jira + Confluence + Bitbucket Server/Data Center icin birlesik MCP sunucusu.
 **61 tool** — tek paket, tek config.
 
-## Hizli Kurulum (3 adim)
+## Hizli Kurulum (2 adim)
 
 ### 1. Indir
+
+```bash
+git clone https://github.com/ahmet-ozel/atlassian-unified-mcp.git
+cd atlassian-unified-mcp
+```
+
+### 2. Kur (otomatik)
+
+```bash
+python install.py
+```
+
+Bu script:
+- Hangi Python calistiriyorsaniz ona bagimliliklari kurar
+- Sizden Jira/Confluence/Bitbucket URL ve token'larini ister
+- `.vscode/mcp.json` dosyasini otomatik olusturur (dogru Python yolu ile)
+
+Sonra:
+1. VS Code'da projeyi ac
+2. `.vscode/mcp.json` dosyasini ac → ustte **"Start"** butonuna tikla
+3. Copilot Chat → **Agent** modu → kullan
+
+---
+
+## Manuel Kurulum (install.py kullanmadan)
 
 ```bash
 git clone https://github.com/ahmet-ozel/atlassian-unified-mcp.git
@@ -13,9 +38,7 @@ cd atlassian-unified-mcp
 pip install -e .
 ```
 
-### 2. IDE config dosyasini olustur
-
-Projenin kok dizininde `.vscode/mcp.json` (VS Code) veya `.cursor/mcp.json` (Cursor) olustur:
+Sonra `.vscode/mcp.json` olustur:
 
 ```json
 {
